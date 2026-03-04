@@ -19,11 +19,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
       - name: Login to ECR
-         run: |
+        run: |
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
-              | docker login \
-              --username AWS \
-              --password-stdin 976193264242.dkr.ecr.us-west-2.amazonaws.com
+          | docker login \
+          --username AWS \
+          --password-stdin 976193264242.dkr.ecr.us-west-2.amazonaws.com
 
       
       - name: Build and Push
