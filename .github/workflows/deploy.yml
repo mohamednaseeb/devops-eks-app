@@ -31,7 +31,7 @@ jobs:
           docker build -t node-app ./app
           docker tag node-app:latest ${{ secrets.ECR_URI }}:latest
           docker push ${{ secrets.ECR_URI }}:latest
-
+     
       - name: Update kubeconfig
         run: |
           aws eks update-kubeconfig --region us-west-2 --name devops-eks
