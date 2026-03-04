@@ -29,8 +29,8 @@ jobs:
       - name: Build and Push
         run: |
           docker build -t node-app ./app
-          docker tag node-app:latest ${{ secrets.ECR_URI }}:latest
-          docker push ${{ secrets.ECR_URI }}:latest
+          docker tag node-app:latest ${{ secrets.ECR_URI }}:v1.0.0
+          docker push ${{ secrets.ECR_URI }}:v1.0.0
      
       - name: Update kubeconfig
         run: |
